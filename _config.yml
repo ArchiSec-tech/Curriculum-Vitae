@@ -1,0 +1,59 @@
+# GitHub Pages Configuration for Francesco Archidiacono's Portfolio
+
+# Site settings
+title: "Francesco Archidiacono - CyberSecurity Portfolio"
+description: "CyberSecurity Consultant & Developer. Portfolio interattivo con progetti, skills e esperienza nel campo della sicurezza informatica."
+author: "Francesco Archidiacono"
+email: "francescoarchidiacono06@gmail.com"
+url: "https://archisec-tech.github.io"
+baseurl: "/Curriculum-Vitae"
+
+# Social links
+github_username: ArchiSec-tech
+linkedin_username: francesco-archidiacono
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude files from processing
+exclude:
+  - "*.c"
+  - "*.exe"
+  - "ciao"
+  - "pari_dispari"
+  - README.md
+  - .gitignore
+  - chatgibbo-somma-arrays.c
+  - ciao.c
+  - da-solo-con-mie-spieg.c
+  - "es,*.c"
+  - "ex*.c"
+  - main.c
+  - pari0dispari1.c
+  - pari_dispari.c
+
+# Include files
+include:
+  - cybersecurity_portfolio.html
+  - cybersecurity_portfolio_printable.html
+  - curriculum.html
+  - index.html
+  - "profilo senza cellulare.jpeg"
+
+# SEO settings
+seo:
+  type: Person
+  name: Francesco Archidiacono
+  job_title: CyberSecurity Consultant & Developer
+  location: "Napoli, Italy"
+  
+# GitHub Pages specific
+github: ArchiSec-tech/Curriculum-Vitae

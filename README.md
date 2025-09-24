@@ -4,12 +4,18 @@
 
 Benvenuto nella mia repository del portfolio! Questo repository contiene il mio curriculum vitae in formato digitale con due versioni ottimizzate:
 
+### 🌐 **Live Portfolio**
+
+**🚀 [Visualizza Portfolio Online](https://archisec-tech.github.io/Curriculum-Vitae/)**
+
 ### 📁 **File Principali**
 
+- **`index.html`** - Pagina di benvenuto con reindirizzamento automatico
 - **`cybersecurity_portfolio.html`** - Portfolio interattivo completo per visualizzazione web
 - **`cybersecurity_portfolio_printable.html`** - Versione ottimizzata per stampa PDF
 - **`curriculum.html`** - Versione originale del curriculum
 - **`profilo senza cellulare.jpeg`** - Foto professionale
+- **`_config.yml`** - Configurazione GitHub Pages
 
 ### 🚀 **Caratteristiche**
 
@@ -44,7 +50,10 @@ Benvenuto nella mia repository del portfolio! Questo repository contiene il mio 
 
 ### 📱 **Visualizzazione**
 
-#### Per il Portfolio Web:
+#### Portfolio Online (GitHub Pages):
+🌐 **https://archisec-tech.github.io/Curriculum-Vitae/**
+
+#### Per sviluppo locale:
 ```bash
 # Apri nel browser
 firefox cybersecurity_portfolio.html

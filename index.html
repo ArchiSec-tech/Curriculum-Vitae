@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francesco Archidiacono - CyberSecurity Portfolio</title>
+    <meta name="description" content="Francesco Archidiacono - CyberSecurity Consultant & Developer. Portfolio interattivo con progetti, skills e esperienza nel campo della sicurezza informatica.">
+    <meta name="keywords" content="cybersecurity, penetration testing, C++, security consultant, portfolio, CV, curriculum">
+    <meta name="author" content="Francesco Archidiacono">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Francesco Archidiacono - CyberSecurity Portfolio">
+    <meta property="og:description" content="CyberSecurity Consultant & Developer specializzato in penetration testing e sviluppo software sicuro.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://archisec-tech.github.io/Curriculum-Vitae/">
+    <meta property="og:image" content="https://archisec-tech.github.io/Curriculum-Vitae/profilo%20senza%20cellulare.jpeg">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Francesco Archidiacono - CyberSecurity Portfolio">
+    <meta name="twitter:description" content="CyberSecurity Consultant & Developer - Portfolio interattivo">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+    
+    <style>
+        body {
+            font-family: 'Fira Code', monospace;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #00ff41;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .redirect-container {
+            text-align: center;
+            padding: 2rem;
+            border: 1px solid rgba(0, 255, 65, 0.3);
+            border-radius: 12px;
+            background: rgba(20, 20, 30, 0.9);
+            backdrop-filter: blur(10px);
+            max-width: 600px;
+        }
+        
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #00d4ff;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #a0a0a0;
+            line-height: 1.6;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: 1px solid #00ff41;
+            background: transparent;
+            color: #00ff41;
+            text-decoration: none;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn:hover {
+            background: #00ff41;
+            color: #0a0a0a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 255, 65, 0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #00ff41, #00d4ff);
+            color: #0a0a0a;
+            border: none;
+            font-weight: 600;
+        }
+        
+        .countdown {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 600px) {
+            .redirect-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .logo {
+                font-size: 3rem;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="redirect-container">
+        <div class="logo">🛡️</div>
+        <h1>Francesco Archidiacono</h1>
+        <p>
+            CyberSecurity Consultant & Developer<br>
+            Benvenuto nel mio portfolio digitale!
+        </p>
+        
+        <div class="buttons">
+            <a href="cybersecurity_portfolio.html" class="btn btn-primary">
+                🚀 Portfolio Interattivo
+            </a>
+            <a href="cybersecurity_portfolio_printable.html" class="btn">
+                📄 Versione PDF
+            </a>
+            <a href="https://github.com/ArchiSec-tech/Curriculum-Vitae" class="btn" target="_blank">
+                💻 Repository GitHub
+            </a>
+        </div>
+        
+        <div class="countdown">
+            Reindirizzamento automatico al portfolio in <span id="counter">5</span> secondi...
+        </div>
+    </div>
+
+    <script>
+        // Auto-redirect dopo 5 secondi
+        let countdown = 5;
+        const counterElement = document.getElementById('counter');
+        
+        const timer = setInterval(() => {
+            countdown--;
+            counterElement.textContent = countdown;
+            
+            if (countdown <= 0) {
+                clearInterval(timer);
+                window.location.href = 'cybersecurity_portfolio.html';
+            }
+        }, 1000);
+        
+        // Console easter egg
+        console.log(`
+        ██████╗██╗   ██╗██████╗ ███████╗██████╗ 
+        ██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗
+        ██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝
+        ██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗
+        ╚██████╗   ██║   ██████╔╝███████╗██║  ██║
+         ╚═════╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝  ╚═╝
+                                                
+        Welcome to Francesco's CyberSecurity Portfolio!
+        GitHub: https://github.com/ArchiSec-tech
+        Contact: francescoarchidiacono06@gmail.com
+        `);
+    </script>
+</body>
+</html>
