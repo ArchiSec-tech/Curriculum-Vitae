@@ -536,10 +536,133 @@
             color: var(--accent-green);
         }
 
+        /* Methodology Section */
+        .methodology-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .methodology-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .methodology-intro p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .methodology-steps {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .method-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--accent-green);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .method-card:hover {
+            border-color: var(--accent-blue);
+            box-shadow: 0 5px 20px rgba(0, 255, 65, 0.1);
+        }
+
+        .method-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .method-header i {
+            color: var(--accent-green);
+            font-size: 1.5rem;
+        }
+
+        .method-header h3 {
+            color: var(--text-primary);
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .method-content {
+            color: var(--text-secondary);
+        }
+
+        .command-block {
+            margin: 1.5rem 0;
+            background: var(--bg-primary);
+            border: 1px solid #333;
+            border-radius: 4px;
+            padding: 1rem;
+        }
+
+        .command-title {
+            color: var(--accent-blue);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .command-block code {
+            display: block;
+            background: #1a1a1a;
+            color: var(--accent-green);
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            padding: 0.5rem;
+            border-radius: 4px;
+            word-break: break-all;
+            border-left: 3px solid var(--accent-green);
+        }
+
+        .report-structure {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .report-structure li {
+            padding: 0.5rem 0;
+            border-left: 2px solid var(--accent-green);
+            padding-left: 1rem;
+            margin: 0.5rem 0;
+        }
+
+        .report-structure strong {
+            color: var(--accent-blue);
+        }
+
+        .methodology-note {
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .methodology-note i {
+            color: #ffc107;
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        .methodology-note strong {
+            color: var(--text-primary);
+        }
+
         /* Contact Section */
         .contact-section {
-            background: var(--gradient-cyber);
-            padding: 4rem 0;
+            background: var(--bg-secondary);
+            padding: 5rem 0;
         }
 
         .contact-content {
@@ -741,6 +864,7 @@
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#methodology">How I Test</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -754,11 +878,9 @@
                 <div class="hero-content">
                     <div class="hero-text">
                         <h1>Francesco Archidiacono</h1>
-                        <div class="subtitle typing-text" id="typing-text">CyberSecurity Consultant & Developer</div>
+                        <div class="subtitle typing-text" id="typing-text">Cybersecurity Junior / Security Consultant in formazione</div>
                         <div class="description">
-                            Studente di Ingegneria Informatica specializzato in CyberSecurity. 
-                            Esperto in linguaggi di programmazione C/C++, penetration testing e 
-                            sicurezza informatica. Pronto a proteggere il futuro digitale.
+                            Studente di Ingegneria Informatica (laurea prevista 2027) con esperienza pratica in assessment di sicurezza web e produzione di report tecnici e commerciali per clienti. Ho condotto security assessment usando strumenti come Nmap e Nikto e redatto proposte di remediazione e piani di sicurezza. Sto approfondendo C/C++ a livello accademico e sviluppo competenze in Python, Linux, networking e testing di applicazioni web. 
                         </div>
                         <div class="cta-buttons">
                             <a href="#contact" class="btn btn-primary">
@@ -805,15 +927,12 @@
                 <div class="experience-item">
                     <div class="experience-description">
                         <p>
-                            Sono uno studente di Ingegneria Informatica al primo anno presso l'Università degli Studi di Napoli Parthenope, 
-                            con una passione profonda per la cybersecurity e lo sviluppo software. La mia curiosità per la sicurezza informatica 
-                            mi ha portato ad approfondire tematiche come penetration testing, analisi delle vulnerabilità e protezione dei sistemi.
+                            <strong>Cybersecurity Junior / Security Consultant in formazione — aspirante Penetration Tester.</strong> 
+                            Disponibile per posizioni junior, stage o contratti part-time (preferenza: remoto / Napoli — Nola).
                         </p>
                         <br>
                         <p>
-                            Attraverso i miei studi e progetti personali, ho acquisito competenze solide in linguaggi di programmazione 
-                            come C e C++, oltre a una comprensione approfondita dei principi di sicurezza informatica. Sono sempre 
-                            alla ricerca di nuove sfide che mi permettano di crescere professionalmente nel campo della cybersecurity.
+                            Studente di Ingegneria Informatica (laurea prevista 2027) con esperienza pratica in assessment di sicurezza web e produzione di report tecnici e commerciali per clienti. Ho condotto security assessment usando strumenti come Nmap e Nikto e redatto proposte di remediazione e piani di sicurezza. Sto approfondendo C/C++ a livello accademico e sviluppo competenze in Python, Linux, networking e testing di applicazioni web.
                         </p>
                     </div>
                 </div>
@@ -829,8 +948,8 @@
                         <h3><i class="fas fa-shield-alt"></i> CyberSecurity</h3>
                         <div class="skill-item">
                             <div class="skill-name">
-                                <span>Penetration Testing</span>
-                                <span>75%</span>
+                                <span>Web Security (OWASP Top 10)</span>
+                                <span>Intermedio</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="75"></div>
@@ -839,16 +958,7 @@
                         <div class="skill-item">
                             <div class="skill-name">
                                 <span>Vulnerability Assessment</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="80"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Network Security</span>
-                                <span>70%</span>
+                                <span>Base/Intermedio</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="70"></div>
@@ -856,11 +966,20 @@
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">
-                                <span>Malware Analysis</span>
-                                <span>65%</span>
+                                <span>Network Security (TCP/IP)</span>
+                                <span>Base</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-width="65"></div>
+                                <div class="skill-progress" data-width="60"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>SSL/TLS & Security Headers</span>
+                                <span>Intermedio</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75"></div>
                             </div>
                         </div>
                     </div>
@@ -869,26 +988,26 @@
                         <h3><i class="fas fa-code"></i> Programming</h3>
                         <div class="skill-item">
                             <div class="skill-name">
-                                <span>C Programming</span>
-                                <span>85%</span>
+                                <span>C / C++</span>
+                                <span>In corso (studio universitario)</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-width="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>C++</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="80"></div>
+                                <div class="skill-progress" data-width="65"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">
                                 <span>Python</span>
-                                <span>75%</span>
+                                <span>Conoscenza pratica</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Linux & Bash</span>
+                                <span>Uso quotidiano</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="75"></div>
@@ -896,8 +1015,8 @@
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">
-                                <span>Assembly</span>
-                                <span>60%</span>
+                                <span>HTML/CSS/Git</span>
+                                <span>Base</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="60"></div>
@@ -909,26 +1028,17 @@
                         <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
                         <div class="skill-item">
                             <div class="skill-name">
-                                <span>Kali Linux</span>
-                                <span>85%</span>
+                                <span>Nmap</span>
+                                <span>Usato in audit reali</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-width="85"></div>
+                                <div class="skill-progress" data-width="80"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">
-                                <span>Metasploit</span>
-                                <span>70%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="70"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Wireshark</span>
-                                <span>75%</span>
+                                <span>Nikto</span>
+                                <span>Usato in audit reali</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-width="75"></div>
@@ -936,11 +1046,20 @@
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">
-                                <span>Nmap</span>
-                                <span>80%</span>
+                                <span>Wireshark</span>
+                                <span>Analisi pcap</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-width="80"></div>
+                                <div class="skill-progress" data-width="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Report & Comunicazione Clienti</span>
+                                <span>Esperienza pratica</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85"></div>
                             </div>
                         </div>
                     </div>
@@ -956,21 +1075,21 @@
                 <div class="experience-item">
                     <div class="experience-header">
                         <div>
-                            <div class="experience-title">Barista & Customer Service</div>
-                            <div class="experience-company">Divina Commedia - Bar e Club, Avellino</div>
+                            <div class="experience-title">Security Assessment — www.supplenti.it & iostudio.online</div>
+                            <div class="experience-company">Consulenza (Cliente privato)</div>
                         </div>
-                        <div class="experience-period">2023 - Present</div>
+                        <div class="experience-period">Settembre 2025</div>
                     </div>
                     <div class="experience-description">
                         <p>
-                            Sviluppato eccellenti capacità di comunicazione e problem-solving in ambiente ad alto stress, 
-                            gestendo contemporaneamente servizio clienti, cassa e coordinamento del team.
+                            Eseguito assessment tecnico con scansioni di rete e applicazione (Nmap, Nikto); durata analisi: 3.5 ore. 
+                            Identificate criticità di certificati SSL, configurazione cookie non sicura e assenza di security headers.
                         </p>
                         <ul>
-                            <li>Gestione efficiente di flussi elevati di clienti mantenendo standard di qualità</li>
-                            <li>Sviluppato capacità di multitasking e gestione del tempo sotto pressione</li>
-                            <li>Migliorato le soft skills necessarie per il lavoro di team in ambienti dinamici</li>
-                            <li>Acquisito esperienza nella risoluzione rapida di problemi operativi</li>
+                            <li>Scansione porte e servizi, vulnerability scanning applicativo, verifica SSL/TLS</li>
+                            <li>Controllo cookie/session management, analisi informazioni esposte e security headers</li>
+                            <li>Redazione di report tecnico e proposta commerciale di remediation (pacchetti: Base / Avanzato / Enterprise)</li>
+                            <li><strong>Deliverable:</strong> Report tecnico dettagliato, report business/proposta e piano di intervento operativo</li>
                         </ul>
                     </div>
                 </div>
@@ -978,21 +1097,42 @@
                 <div class="experience-item">
                     <div class="experience-header">
                         <div>
-                            <div class="experience-title">CyberSecurity Student</div>
-                            <div class="experience-company">Self-Learning & University Projects</div>
+                            <div class="experience-title">Barista & Customer Service</div>
+                            <div class="experience-company">Divina Commedia - Bar e Club, Avellino</div>
+                        </div>
+                        <div class="experience-period">2023 - Present</div>
+                    </div>
+                    <div class="experience-description">
+                        <p>
+                            Sviluppato soft skills fondamentali per il settore cybersecurity attraverso la gestione di situazioni complesse e comunicazione con stakeholder.
+                        </p>
+                        <ul>
+                            <li><strong>Capacità di gestione dello stress e delle priorità</strong> — utile per incident response e lavoro sotto SLA</li>
+                            <li><strong>Comunicazione con stakeholder</strong> — esperienza nella spiegazione di problemi complessi a persone non tecniche (utile per report/consulenza)</li>
+                            <li><strong>Teamwork e affidabilità</strong> — gestione turni e responsabilità in ambiente dinamico</li>
+                            <li>Acquisito esperienza nella risoluzione rapida di problemi operativi sotto pressione</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">CyberSecurity Student & Researcher</div>
+                            <div class="experience-company">Università Parthenope - Progetti Universitari</div>
                         </div>
                         <div class="experience-period">2024 - Present</div>
                     </div>
                     <div class="experience-description">
                         <p>
-                            Approfondimento autonomo delle tematiche di cybersecurity attraverso progetti pratici, 
-                            certificazioni e studio dei framework di sicurezza più utilizzati nel settore.
+                            Laurea in Ingegneria Informatica (prevista 2027) con focus su cybersecurity e sviluppo sicuro. 
+                            Approfondimento autonomo delle tematiche attraverso progetti pratici e studio.
                         </p>
                         <ul>
-                            <li>Studio approfondito di vulnerabilità web (OWASP Top 10)</li>
-                            <li>Pratica con strumenti di penetration testing su ambienti controllati</li>
-                            <li>Analisi di malware e reverse engineering per scopi educativi</li>
-                            <li>Implementazione di soluzioni di sicurezza in progetti universitari</li>
+                            <li>Studio approfondito di vulnerabilità web (OWASP Top 10) con applicazione pratica</li>
+                            <li>Sviluppo competenze in C/C++ a livello accademico (esercizi e progetti didattici)</li>
+                            <li>Lab su penetration testing e certificazioni previste in programma</li>
+                            <li>Corsi/formazione in programma: basi di penetration testing e certificazioni</li>
                         </ul>
                     </div>
                 </div>
@@ -1006,98 +1146,208 @@
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-icon">
-                            <i class="fas fa-bug"></i>
+                            <i class="fas fa-shield-alt"></i>
                         </div>
-                        <div class="project-title">Vulnerability Scanner</div>
+                        <div class="project-title">Security Assessment — Supplenti.it</div>
                         <div class="project-description">
-                            Scanner personalizzato per l'identificazione automatica di vulnerabilità comuni 
-                            in applicazioni web, sviluppato in C++ con focus su performance e accuratezza.
+                            Assessment completo di sicurezza web per www.supplenti.it e iostudio.online con report tecnico e proposta commerciale. 
+                            Identificate vulnerabilità SSL, cookie e security headers.
                         </div>
                         <div class="project-tech">
-                            <span class="tech-tag">C++</span>
-                            <span class="tech-tag">Network Programming</span>
-                            <span class="tech-tag">Security</span>
+                            <span class="tech-tag">Nmap</span>
+                            <span class="tech-tag">Nikto</span>
+                            <span class="tech-tag">SSL/TLS</span>
+                            <span class="tech-tag">Report Writing</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> GitHub
+                                <i class="fas fa-file-pdf"></i> Report Tecnico
                             </a>
                             <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Demo
+                                <i class="fas fa-file-contract"></i> Report Business
                             </a>
                         </div>
                     </div>
 
                     <div class="project-card">
                         <div class="project-icon">
-                            <i class="fas fa-shield-virus"></i>
+                            <i class="fas fa-laptop-code"></i>
                         </div>
-                        <div class="project-title">Malware Detection System</div>
+                        <div class="project-title">Portfolio & Curriculum Online</div>
                         <div class="project-description">
-                            Sistema di rilevamento malware basato su machine learning e analisi comportamentale, 
-                            implementato per identificare minacce zero-day attraverso pattern analysis.
+                            Sito portfolio contenente CV, progetti e report di security assessment. Versione GitHub Pages con design cybersecurity-themed. 
+                            Include repository completa con documentazione.
                         </div>
                         <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Machine Learning</span>
-                            <span class="tech-tag">Malware Analysis</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">GitHub Pages</span>
+                            <span class="tech-tag">Responsive Design</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> GitHub
+                            <a href="https://archisec-tech.github.io/Curriculum-Vitae/" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-file-pdf"></i> Documentation
+                            <a href="https://github.com/ArchiSec-tech/Curriculum-Vitae" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> Repository
                             </a>
                         </div>
                     </div>
 
                     <div class="project-card">
                         <div class="project-icon">
-                            <i class="fas fa-network-wired"></i>
+                            <i class="fas fa-globe"></i>
                         </div>
-                        <div class="project-title">Network Security Analyzer</div>
+                        <div class="project-title">Sito Personale — lacucciadiugo.it</div>
                         <div class="project-description">
-                            Tool per l'analisi del traffico di rete e l'identificazione di attività sospette, 
-                            con implementazione di algoritmi di deep packet inspection e anomaly detection.
+                            Sito web personale / progetto portfolio (prototipo) che mostra competenze in sviluppo web e gestione contenuti. 
+                            Dimostra capacità di design e implementazione frontend.
                         </div>
                         <div class="project-tech">
-                            <span class="tech-tag">C</span>
-                            <span class="tech-tag">Wireshark</span>
-                            <span class="tech-tag">Network Security</span>
+                            <span class="tech-tag">Web Design</span>
+                            <span class="tech-tag">Frontend</span>
+                            <span class="tech-tag">Portfolio</span>
+                            <span class="tech-tag">Prototipo</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> GitHub
+                            <a href="https://lacucciadiugo.it" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Visita Sito
                             </a>
                             <a href="#" class="project-link">
-                                <i class="fas fa-play"></i> Live Demo
+                                <i class="fas fa-info-circle"></i> Info Progetto
                             </a>
                         </div>
                     </div>
 
                     <div class="project-card">
                         <div class="project-icon">
-                            <i class="fas fa-key"></i>
+                            <i class="fas fa-terminal"></i>
                         </div>
-                        <div class="project-title">Cryptographic Library</div>
+                        <div class="project-title">How I Test — Metodologia Security</div>
                         <div class="project-description">
-                            Libreria crittografica completa implementata in C, supporta algoritmi simmetrici e 
-                            asimmetrici con focus su sicurezza e performance per applicazioni enterprise.
+                            Metodologia e toolkit per security assessment con comandi pratici e trasparenza metodologica. 
+                            Include esempi di scansioni Nmap, Nikto, test SSL/TLS e controlli security headers.
                         </div>
                         <div class="project-tech">
-                            <span class="tech-tag">C</span>
-                            <span class="tech-tag">Cryptography</span>
-                            <span class="tech-tag">Security</span>
+                            <span class="tech-tag">Nmap</span>
+                            <span class="tech-tag">Nikto</span>
+                            <span class="tech-tag">OpenSSL</span>
+                            <span class="tech-tag">Curl</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> GitHub
+                            <a href="#methodology" class="project-link">
+                                <i class="fas fa-code"></i> Vedi Comandi
                             </a>
                             <a href="#" class="project-link">
-                                <i class="fas fa-book"></i> API Docs
+                                <i class="fas fa-book-open"></i> Metodologia
                             </a>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology Section -->
+        <section class="section" id="methodology">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="title-bracket">[</span>
+                    <span class="title-text">How I Test — Metodologia</span>
+                    <span class="title-bracket">]</span>
+                </h2>
+                
+                <div class="methodology-content">
+                    <div class="methodology-intro">
+                        <p>Ecco i comandi e la metodologia che uso nei security assessment reali. Trasparenza totale per i recruiter tecnici.</p>
+                    </div>
+                    
+                    <div class="methodology-steps">
+                        <div class="method-card">
+                            <div class="method-header">
+                                <i class="fas fa-network-wired"></i>
+                                <h3>1. Network Discovery & Port Scanning</h3>
+                            </div>
+                            <div class="method-content">
+                                <div class="command-block">
+                                    <div class="command-title">Scansione iniziale rapida:</div>
+                                    <code>nmap -sS -T4 -p- --open target.com</code>
+                                </div>
+                                <div class="command-block">
+                                    <div class="command-title">Service detection e version scanning:</div>
+                                    <code>nmap -sV -sC -O -A -p 22,80,443,8080 target.com</code>
+                                </div>
+                                <div class="command-block">
+                                    <div class="command-title">Scansione UDP (servizi critici):</div>
+                                    <code>nmap -sU --top-ports 1000 target.com</code>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="method-card">
+                            <div class="method-header">
+                                <i class="fas fa-globe"></i>
+                                <h3>2. Web Application Testing</h3>
+                            </div>
+                            <div class="method-content">
+                                <div class="command-block">
+                                    <div class="command-title">Scan vulnerabilità web con Nikto:</div>
+                                    <code>nikto -h https://target.com -ssl -Format htm -output nikto_report.html</code>
+                                </div>
+                                <div class="command-block">
+                                    <div class="command-title">Test SSL/TLS configuration:</div>
+                                    <code>openssl s_client -connect target.com:443 -servername target.com</code>
+                                </div>
+                                <div class="command-block">
+                                    <div class="command-title">Check security headers:</div>
+                                    <code>curl -I -s https://target.com | grep -E "(X-Frame|Content-Security|Strict-Transport)"</code>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="method-card">
+                            <div class="method-header">
+                                <i class="fas fa-shield-alt"></i>
+                                <h3>3. Vulnerability Assessment</h3>
+                            </div>
+                            <div class="method-content">
+                                <div class="command-block">
+                                    <div class="command-title">Directory enumeration:</div>
+                                    <code>dirb https://target.com /usr/share/dirb/wordlists/common.txt</code>
+                                </div>
+                                <div class="command-block">
+                                    <div class="command-title">Subdomain discovery:</div>
+                                    <code>amass enum -d target.com -o subdomains.txt</code>
+                                </div>
+                                <div class="command-block">
+                                    <div class="command-title">DNS enumeration:</div>
+                                    <code>dig target.com ANY +noall +answer</code>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="method-card">
+                            <div class="method-header">
+                                <i class="fas fa-file-alt"></i>
+                                <h3>4. Documentation & Reporting</h3>
+                            </div>
+                            <div class="method-content">
+                                <p><strong>Report Structure che uso:</strong></p>
+                                <ul class="report-structure">
+                                    <li><strong>Executive Summary:</strong> Rischi principali in linguaggio business</li>
+                                    <li><strong>Technical Findings:</strong> Vulnerabilità dettagliate con CVSS score</li>
+                                    <li><strong>Evidence:</strong> Screenshot e command output come proof</li>
+                                    <li><strong>Remediation:</strong> Steps concreti per il fix</li>
+                                    <li><strong>Timeline:</strong> Priorità di intervento (Critical/High/Medium/Low)</li>
+                                </ul>
+                                <p><strong>Tools per reporting:</strong> Markdown → HTML/PDF, screenshot automatici con scrot/gnome-screenshot</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="methodology-note">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Nota:</strong> Tutti i test vengono eseguiti solo su sistemi per cui ho autorizzazione esplicita. 
+                        Uso sempre VPN e documento ogni attività per compliance e trasparenza.
                     </div>
                 </div>
             </div>
