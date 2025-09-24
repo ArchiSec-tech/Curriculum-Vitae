@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CV — Francesco Archidiacono</title>
+
+  <!-- Font (Google) - se non hai accesso a internet sostituisci con font di sistema -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #f7f8fa;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --accent: #0b63d3;
+      --accent-2: #0f172a;
+      --heading: #0f172a;
+      --glass: rgba(11,99,211,0.08);
+      --page-width: 900px;
+      --gutter: 24px;
+      --radius: 12px;
+      --shadow: 0 6px 18px rgba(16,24,40,0.08);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+    .wrap{max-width:var(--page-width);margin:28px auto;padding:20px;}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,1), rgba(255,255,255,0.98));border-radius:var(--radius);box-shadow:var(--shadow);display:flex;gap:var(--gutter);overflow:hidden}
+    /* Left column */
+    .side{width:320px;background:linear-gradient(180deg,var(--card),#fbfdff);padding:26px;display:flex;flex-direction:column;align-items:center;gap:20px}
+    .photo{
+      width:170px;height:220px;border-radius:10px;overflow:hidden;flex-shrink:0;border:4px solid var(--glass);
+      display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#e9eefc,#ffffff);
+    }
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .name{font-weight:700;color:var(--heading);font-size:20px;text-align:center;margin-top:6px}
+    .role{font-weight:600;color:var(--accent);font-size:13px;text-transform:uppercase;letter-spacing:0.08em;margin-top:4px}
+    .contact{width:100%;margin-top:6px}
+    .contact p{margin:6px 0;color:var(--muted);font-size:13px}
+    .pill{display:inline-block;background:var(--glass);color:var(--accent-2);padding:6px 10px;border-radius:999px;font-weight:600;font-size:12px;margin:6px 4px 0 0}
+    .skills{width:100%;margin-top:6px}
+    .skills h4{margin:8px 0 6px 0;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em}
+    .skill-list{display:flex;flex-wrap:wrap;gap:8px}
+    .skill-item{background:#eef6ff;border-radius:8px;padding:6px 8px;font-size:12px;color:#084298;font-weight:600}
+    .side-footer{margin-top:auto;font-size:12px;color:var(--muted);text-align:center;line-height:1.4}
+
+    /* Right column */
+    .main{flex:1;padding:26px 30px;display:flex;flex-direction:column;gap:18px}
+    .section{padding-bottom:6px;border-bottom:1px dashed #eef2ff}
+    .title{display:flex;align-items:center;justify-content:space-between}
+    .title h3{margin:0;font-size:16px;color:var(--heading)}
+    .title small{color:var(--accent);font-weight:700}
+    .profile p{margin:8px 0;color:#111827;line-height:1.45}
+    .job{margin-top:8px}
+    .job h4{margin:0;font-size:14px;color:var(--accent-2);font-weight:700}
+    .job .meta{font-size:12px;color:var(--muted);margin-bottom:6px}
+    .job ul{margin:6px 0 0 18px;padding:0;color:#111827}
+    .education, .skills-section{display:flex;flex-direction:column;gap:8px}
+    .bul{color:var(--muted);font-size:13px}
+
+    /* Small screens */
+    @media (max-width:900px){
+      .card{flex-direction:column}
+      .side{width:100%;flex-direction:row;padding:16px;gap:14px;align-items:flex-start}
+      .photo{width:120px;height:150px}
+      .main{padding:16px}
+    }
+
+    /* Print adjustments */
+    @media print{
+      body{background:white}
+      .wrap{margin:0;box-shadow:none}
+      .card{box-shadow:none;border-radius:0}
+      .side{background:white}
+      a{text-decoration:none;color:inherit}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted);font-size:13px}
+    .mb-4{margin-bottom:16px}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card" role="document" aria-label="Curriculum Vitae di Francesco Archidiacono">
+      <!-- LEFT / SIDE -->
+      <aside class="side" aria-labelledby="profile-photo">
+        <div class="photo" id="profile-photo">
+          <!-- Sostituisci il src con il percorso della tua immagine -->
+          <img src="profilo senza cellulare.jpeg" alt="Foto di Francesco Archidiacono">
+        </div>
+
+        <div style="text-align:center;width:100%">
+          <div class="name">Francesco Archidiacono</div>
+          <div class="role">CyberSecurity Consultant • Studente</div>
+          <div class="contact">
+            <p class="muted">Napoli (NA)</p>
+            <p><strong>Tel:</strong> 3921896039</p>
+            <p><strong>Email:</strong> francescoarchidiacono06@gmail.com</p>
+            <p class="muted"><a href="https://www.linkedin.com/in/francesco-archidiacono/" target="_blank" rel="noopener">linkedin.com/in/francesco-archidiacono</a></p>
+          </div>
+        </div>
+
+        <div style="width:100%;margin-top:6px">
+          <h4 style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin:6px 0">Competenze</h4>
+          <div class="skill-list">
+            <span class="skill-item">Customer Service</span>
+            <span class="skill-item">CRM</span>
+            <span class="skill-item">C / C++</span>
+            <span class="skill-item">Problem Solving</span>
+            <span class="skill-item">MS Office</span>
+            <span class="skill-item">Inglese (TOLC-S 24/30)</span>
+          </div>
+        </div>
+
+        <div class="side-footer">
+          <div style="margin-top:10px"><strong>Disponibilità:</strong> immediata — sere &amp; weekend</div>
+          <div style="margin-top:8px" class="muted">Patente B • Mezzo proprio</div>
+        </div>
+      </aside>
+
+      <!-- RIGHT / MAIN -->
+      <main class="main">
+        <section class="section profile" aria-labelledby="about-title">
+          <div class="title">
+            <h3 id="about-title">Profilo professionale</h3>
+            <small>Student / Junior</small>
+          </div>
+          <p>
+            Studente di Ingegneria Informatica (1° anno) presso l’Università degli Studi di Napoli Parthenope.
+            Motivato, affidabile e con ottime capacità comunicative. Rapida capacità di apprendimento di nuovi
+            software e procedure aziendali grazie alla conoscenza di linguaggi di programmazione (C, C++).
+            Disponibilità immediata e massima flessibilità su turni serali e weekend.
+          </p>
+        </section>
+
+        <section class="section" aria-labelledby="exp-title">
+          <div class="title" id="exp-title">
+            <h3>Esperienza</h3>
+            <small>Rilievo</small>
+          </div>
+
+          <article class="job" aria-labelledby="job1">
+            <h4 id="job1">Barista — Divina Commedia - Bar e Club (Avellino)</h4>
+            <div class="meta">Servizio al banco • Gestione cassa • Accoglienza clienti</div>
+            <ul>
+              <li>Servizio al banco e preparazione bevande in contesti con afflusso elevato.</li>
+              <li>Gestione ordini, cassa e supporto clienti; capacità di mantenere calma e professionalità sotto pressione.</li>
+              <li>Sviluppate abilità di comunicazione diretta e gestione del tempo; predisposizione ad apprendere procedure aziendali.</li>
+            </ul>
+          </article>
+
+        </section>
+
+        <section class="section" aria-labelledby="edu-title">
+          <div class="title" id="edu-title">
+            <h3>Istruzione</h3>
+            <small>Formazione</small>
+          </div>
+          <div class="education">
+            <div>
+              <strong>Ingegneria Informatica</strong> — Università degli Studi di Napoli Parthenope<br>
+              <span class="muted">1° anno (in corso)</span>
+            </div>
+            <div style="margin-top:8px">
+              <strong>Diploma di istruzione secondaria superiore</strong><br>
+              <span class="muted"></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="skills-title">
+          <div class="title" id="skills-title">
+            <h3>Competenze e conoscenze</h3>
+            <small>Technical & Soft</small>
+          </div>
+          <div class="skills-section">
+            <p class="bul"><strong>Lingue:</strong> Italiano (madrelingua); Inglese — TOLC-S 24/30 (buono).</p>
+            <p class="bul"><strong>Tech & Tools:</strong> C, C++, Microsoft Office, Google Workspace, apprendimento rapido di CRM e software gestionali.</p>
+            <p class="bul"><strong>Soft skills:</strong> Comunicazione telefonica, problem solving, gestione del cliente, puntualità e adattabilità.</p>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="other-title">
+          <div class="title" id="other-title">
+            <h3>Altro</h3>
+            <small>Disponibilità</small>
+          </div>
+          <div class="mb-4">
+            <p class="bul"><strong>Disponibilità:</strong> immediata — turni serali e weekend. Referenze disponibili su richiesta.</p>
+          </div>
+          <div style="display:flex;justify-content:flex-end;align-items:center;gap:10px">
+            <div style="font-size:12px;color:var(--muted)"></div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+</body>
+</html>

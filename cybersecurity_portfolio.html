@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francesco Archidiacono | CyberSecurity Consultant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #111111;
+            --card-bg: rgba(20, 20, 30, 0.9);
+            --accent-green: #00ff41;
+            --accent-blue: #00d4ff;
+            --accent-red: #ff0040;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --text-muted: #666666;
+            --border-glow: rgba(0, 255, 65, 0.3);
+            --gradient-cyber: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Fira Code', monospace;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Matrix Background Effect */
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-glow);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            text-decoration: none;
+            position: relative;
+        }
+
+        .logo::after {
+            content: '_';
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-green);
+            text-shadow: 0 0 10px var(--accent-green);
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-green);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::before {
+            width: 100%;
+        }
+
+        /* Main Container */
+        main {
+            margin-top: 80px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--gradient-cyber);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 255, 65, 0.05) 0%, transparent 70%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 4rem;
+            align-items: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-text h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--accent-green), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .typing-text {
+            height: 2rem;
+            overflow: hidden;
+        }
+
+        .hero-text .description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--accent-green), var(--accent-blue));
+            color: var(--primary-bg);
+            font-weight: 500;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-green);
+            border: 1px solid var(--accent-green);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 255, 65, 0.3);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .profile-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 255, 65, 0.1);
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 220px;
+            border-radius: 8px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(45deg, #333, #555);
+            border: 2px solid var(--accent-green);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-pic::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 65, 0.1) 50%, transparent 70%);
+            animation: scan 3s infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .contact-info {
+            margin-top: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-item i {
+            color: var(--accent-green);
+            width: 16px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--accent-green);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(45deg, var(--accent-green), var(--accent-blue));
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 12px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .skill-category h3 {
+            font-family: 'Orbitron', monospace;
+            color: var(--accent-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-item {
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(45deg, var(--accent-green), var(--accent-blue));
+            border-radius: 3px;
+            transition: width 2s ease;
+            position: relative;
+        }
+
+        .skill-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Experience Section */
+        .experience-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(45deg, var(--accent-green), var(--accent-blue));
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .experience-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.3rem;
+            color: var(--accent-blue);
+        }
+
+        .experience-company {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-period {
+            color: var(--accent-green);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .experience-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .experience-description ul {
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .experience-description li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .experience-description li::marker {
+            color: var(--accent-green);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 12px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 255, 65, 0.2);
+            border-color: var(--accent-green);
+        }
+
+        .project-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, var(--accent-green), var(--accent-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: var(--primary-bg);
+        }
+
+        .project-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.3rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(0, 255, 65, 0.1);
+            color: var(--accent-green);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(0, 255, 65, 0.3);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--accent-green);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--gradient-cyber);
+            padding: 4rem 0;
+        }
+
+        .contact-content {
+            text-align: center;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-method {
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 12px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 255, 65, 0.2);
+        }
+
+        .contact-method i {
+            font-size: 2rem;
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+        }
+
+        .contact-method h3 {
+            font-family: 'Orbitron', monospace;
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-method p {
+            color: var(--text-secondary);
+        }
+
+        .contact-method a {
+            color: var(--accent-green);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-method a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-bg);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-glow);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--accent-green);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-green);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-blue);
+        }
+
+        /* Selection Styling */
+        ::selection {
+            background: var(--accent-green);
+            color: var(--primary-bg);
+        }
+
+        /* Loading Animation */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loading-text {
+            font-family: 'Orbitron', monospace;
+            font-size: 2rem;
+            color: var(--accent-green);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="loading-text">INITIALIZING_SYSTEM...</div>
+    </div>
+
+    <!-- Matrix Background -->
+    <canvas class="matrix-bg" id="matrix"></canvas>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="#home" class="logo">F_ARCH</a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Francesco Archidiacono</h1>
+                        <div class="subtitle typing-text" id="typing-text">CyberSecurity Consultant & Developer</div>
+                        <div class="description">
+                            Studente di Ingegneria Informatica specializzato in CyberSecurity. 
+                            Esperto in linguaggi di programmazione C/C++, penetration testing e 
+                            sicurezza informatica. Pronto a proteggere il futuro digitale.
+                        </div>
+                        <div class="cta-buttons">
+                            <a href="#contact" class="btn btn-primary">
+                                <i class="fas fa-terminal"></i> Hire Me
+                            </a>
+                            <a href="#projects" class="btn btn-secondary">
+                                <i class="fas fa-code"></i> View Projects
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="profile-card">
+                            <div class="profile-pic">
+                                <img src="profilo senza cellulare.jpeg" alt="Francesco Archidiacono">
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Napoli, Italy</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+39 392 189 6039</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>francescoarchidiacono06@gmail.com</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span>francesco-archidiacono</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="experience-item">
+                    <div class="experience-description">
+                        <p>
+                            Sono uno studente di Ingegneria Informatica al primo anno presso l'Università degli Studi di Napoli Parthenope, 
+                            con una passione profonda per la cybersecurity e lo sviluppo software. La mia curiosità per la sicurezza informatica 
+                            mi ha portato ad approfondire tematiche come penetration testing, analisi delle vulnerabilità e protezione dei sistemi.
+                        </p>
+                        <br>
+                        <p>
+                            Attraverso i miei studi e progetti personali, ho acquisito competenze solide in linguaggi di programmazione 
+                            come C e C++, oltre a una comprensione approfondita dei principi di sicurezza informatica. Sono sempre 
+                            alla ricerca di nuove sfide che mi permettano di crescere professionalmente nel campo della cybersecurity.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="container">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-shield-alt"></i> CyberSecurity</h3>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Penetration Testing</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Vulnerability Assessment</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Network Security</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Malware Analysis</span>
+                                <span>65%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="65"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Programming</h3>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>C Programming</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>C++</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Python</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Assembly</span>
+                                <span>60%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="60"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Kali Linux</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Metasploit</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Wireshark</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Nmap</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Barista & Customer Service</div>
+                            <div class="experience-company">Divina Commedia - Bar e Club, Avellino</div>
+                        </div>
+                        <div class="experience-period">2023 - Present</div>
+                    </div>
+                    <div class="experience-description">
+                        <p>
+                            Sviluppato eccellenti capacità di comunicazione e problem-solving in ambiente ad alto stress, 
+                            gestendo contemporaneamente servizio clienti, cassa e coordinamento del team.
+                        </p>
+                        <ul>
+                            <li>Gestione efficiente di flussi elevati di clienti mantenendo standard di qualità</li>
+                            <li>Sviluppato capacità di multitasking e gestione del tempo sotto pressione</li>
+                            <li>Migliorato le soft skills necessarie per il lavoro di team in ambienti dinamici</li>
+                            <li>Acquisito esperienza nella risoluzione rapida di problemi operativi</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">CyberSecurity Student</div>
+                            <div class="experience-company">Self-Learning & University Projects</div>
+                        </div>
+                        <div class="experience-period">2024 - Present</div>
+                    </div>
+                    <div class="experience-description">
+                        <p>
+                            Approfondimento autonomo delle tematiche di cybersecurity attraverso progetti pratici, 
+                            certificazioni e studio dei framework di sicurezza più utilizzati nel settore.
+                        </p>
+                        <ul>
+                            <li>Studio approfondito di vulnerabilità web (OWASP Top 10)</li>
+                            <li>Pratica con strumenti di penetration testing su ambienti controllati</li>
+                            <li>Analisi di malware e reverse engineering per scopi educativi</li>
+                            <li>Implementazione di soluzioni di sicurezza in progetti universitari</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <div class="project-title">Vulnerability Scanner</div>
+                        <div class="project-description">
+                            Scanner personalizzato per l'identificazione automatica di vulnerabilità comuni 
+                            in applicazioni web, sviluppato in C++ con focus su performance e accuratezza.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Network Programming</span>
+                            <span class="tech-tag">Security</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <div class="project-title">Malware Detection System</div>
+                        <div class="project-description">
+                            Sistema di rilevamento malware basato su machine learning e analisi comportamentale, 
+                            implementato per identificare minacce zero-day attraverso pattern analysis.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Malware Analysis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-file-pdf"></i> Documentation
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div class="project-title">Network Security Analyzer</div>
+                        <div class="project-description">
+                            Tool per l'analisi del traffico di rete e l'identificazione di attività sospette, 
+                            con implementazione di algoritmi di deep packet inspection e anomaly detection.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">C</span>
+                            <span class="tech-tag">Wireshark</span>
+                            <span class="tech-tag">Network Security</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-play"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <div class="project-title">Cryptographic Library</div>
+                        <div class="project-description">
+                            Libreria crittografica completa implementata in C, supporta algoritmi simmetrici e 
+                            asimmetrici con focus su sicurezza e performance per applicazioni enterprise.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">C</span>
+                            <span class="tech-tag">Cryptography</span>
+                            <span class="tech-tag">Security</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-book"></i> API Docs
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <h2 class="section-title">Let's Work Together</h2>
+                    <p style="color: var(--text-secondary); font-size: 1.2rem; margin-bottom: 2rem;">
+                        Pronto ad affrontare nuove sfide nel campo della cybersecurity. 
+                        Disponibile per posizioni junior o stage formativi.
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <h3>Email</h3>
+                            <p>
+                                <a href="mailto:francescoarchidiacono06@gmail.com">
+                                    francescoarchidiacono06@gmail.com
+                                </a>
+                            </p>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fab fa-linkedin"></i>
+                            <h3>LinkedIn</h3>
+                            <p>
+                                <a href="https://www.linkedin.com/in/francesco-archidiacono/" target="_blank">
+                                    francesco-archidiacono
+                                </a>
+                            </p>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <h3>Phone</h3>
+                            <p>
+                                <a href="tel:+393921896039">+39 392 189 6039</a>
+                            </p>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>Location</h3>
+                            <p>Napoli, Italy<br>
+                            <small>Disponibile per remote work</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <p>&copy; 2024 Francesco Archidiacono. All rights reserved.</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/francesco-archidiacono/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:francescoarchidiacono06@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:+393921896039" class="social-link">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loading Screen
+        window.addEventListener('load', function() {
+            const loading = document.getElementById('loading');
+            setTimeout(() => {
+                loading.style.opacity = '0';
+                setTimeout(() => {
+                    loading.style.display = 'none';
+                }, 500);
+            }, 2000);
+        });
+
+        // Matrix Background Effect
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+        const matrixArray = matrix.split("");
+
+        const fontSize = 10;
+        const columns = canvas.width / fontSize;
+
+        const drops = [];
+        for (let x = 0; x < columns; x++) {
+            drops[x] = 1;
+        }
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(10, 10, 10, 0.04)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#00ff41';
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(drawMatrix, 35);
+
+        // Typing Effect
+        const typingText = document.getElementById('typing-text');
+        const phrases = [
+            'CyberSecurity Consultant',
+            'Penetration Tester', 
+            'C/C++ Developer',
+            'Security Researcher',
+            'Network Analyst'
+        ];
+        
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeWriter() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                setTimeout(() => isDeleting = true, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+            }
+
+            const typingSpeed = isDeleting ? 50 : 100;
+            setTimeout(typeWriter, typingSpeed);
+        }
+
+        setTimeout(typeWriter, 1000);
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Skill Bar Animation
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-progress');
+                    skillBars.forEach(bar => {
+                        const width = bar.getAttribute('data-width');
+                        setTimeout(() => {
+                            bar.style.width = width + '%';
+                        }, 200);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.skill-category').forEach(category => {
+            observer.observe(category);
+        });
+
+        // Header Background on Scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                header.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
+
+        // Parallax Effect for Hero Section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            const rate = scrolled * -0.5;
+            hero.style.transform = `translateY(${rate}px)`;
+        });
+
+        // Card Hover Effects
+        document.querySelectorAll('.project-card, .experience-item, .skill-category').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Dynamic Terminal Cursor
+        setInterval(() => {
+            const cursor = document.querySelector('.logo::after');
+            if (cursor) {
+                cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+            }
+        }, 500);
+
+        // Contact Form Interactivity (if you add a form later)
+        document.querySelectorAll('.contact-method').forEach(method => {
+            method.addEventListener('click', function() {
+                const link = this.querySelector('a');
+                if (link) {
+                    link.click();
+                }
+            });
+        });
+
+        // Add Glitch Effect to Title on Hover
+        const title = document.querySelector('.hero-text h1');
+        title.addEventListener('mouseenter', function() {
+            this.style.textShadow = `
+                2px 0 #ff0040,
+                -2px 0 #00d4ff,
+                0 2px #00ff41,
+                0 -2px #ff0040
+            `;
+        });
+
+        title.addEventListener('mouseleave', function() {
+            this.style.textShadow = 'none';
+        });
+
+        // Performance Optimization
+        let ticking = false;
+        
+        function updateOnScroll() {
+            // Throttle scroll events
+            if (!ticking) {
+                requestAnimationFrame(function() {
+                    // Add scroll-based animations here
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', updateOnScroll);
+
+        // Console Easter Egg
+        console.log(`
+    ██████╗██╗   ██╗██████╗ ███████╗██████╗ 
+    ██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗
+    ██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝
+    ██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗
+    ╚██████╗   ██║   ██████╔╝███████╗██║  ██║
+     ╚═════╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝  ╚═╝
+                                            
+    Welcome to Francesco's CyberSecurity Portfolio!
+    Looking for a talented cybersecurity professional?
+    Contact: francescoarchidiacono06@gmail.com
+    `);
+    </script>
+</body>
+</html>
