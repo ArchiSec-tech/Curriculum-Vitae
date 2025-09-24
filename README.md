@@ -115,7 +115,7 @@ Studente di Ingegneria Informatica (1° anno) presso l'Università degli Studi d
 
 ```bash
 # Clona la repository
-git clone https://github.com/[username]/Curriculum-Vitae.git
+git clone https://github.com/ArchiSec-tech/Curriculum-Vitae.git
 
 # Naviga nella directory
 cd Curriculum-Vitae
